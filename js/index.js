@@ -41,17 +41,16 @@ function searchSandwiches(ingredients) {
     fetch(url)
     .then(response => response.json())
     .then(data => {
+      const hits = data.hits;
+      const resultadosSection = document.getElementById("resultados");
+      resultadosSection.innerHTML ="";
 
-        const hits = data.hits;
-        const resultadosSection = document.getElementById("resultados");
-        resultadosSection.innerHTML ="";
-
-        hits.forEach(hit => {
+      hits.forEach(hit => {
         let recetaDiv = document.createElement("div");
         recetaDiv.style.display = "none"
 
         let nombreReceta = document.createElement("h3");
-        nombreReceta.textContent = hit.recipe.label;
+        nombreReceta.innerText = hit.recipe.label;
 
         let imagenReceta = document.createElement("img");
         imagenReceta.onload = function(){
@@ -59,23 +58,38 @@ function searchSandwiches(ingredients) {
         }
         imagenReceta.src = hit.recipe.image;
 
-       /*  let listaIngredientes = document.createElement("li");
-        listaIngredientes.textContent = hit.recipe.ingredientLines; */
-
         let cantidadIngredientes = document.createElement("p");
-        cantidadIngredientes.textContent = "Ingredients:" +hit.recipe.ingredients.length;
+        cantidadIngredientes.innerText = "Ingredients:" +hit.recipe.ingredients.length;
 
-        let urlReceta = document.createElement("a");
-        urlReceta.href = hit.recipe.url;
-        
+        let urlSource = document.createElement("a");
+        urlSource.href = hit.recipe.url;
+        urlSource.setAttribute("target", "_blank")
+
+
+        let recipeUrl = document.createElement("a");
+        let id = hit.recipe.uri.split("_")[1];
+        recipeUrl.href = "recipeInfo.html?id=" + id ;
+
+
         recetaDiv.appendChild(nombreReceta);
-        recetaDiv.appendChild(imagenReceta);
+        recipeUrl.appendChild(imagenReceta); //recipeUrl.appendChild(imagenReceta) -para que sea solo la imagen la q tenga el link
+        recetaDiv.appendChild(recipeUrl)
         recetaDiv.appendChild(cantidadIngredientes);
-        recetaDiv.appendChild(urlReceta);
-        /* recetaDiv.appendChild(listaIngredientes); */
-        urlReceta.textContent = "Source";
+        recetaDiv.appendChild(urlSource);
+        urlSource.textContent = "+ info";
         resultadosSection.appendChild(recetaDiv);
       });
     })
     .catch(error => console.error(error));
 }
+
+
+        //MOSTRAR LA LISTA DE INGREDIENTES
+
+                /* let ingredientList = document.createElement("li");
+        ingredientList.innerText = hit.recipe.ingredientLines; */
+
+
+
+        /* recetaDiv.appendChild(ingredientList) */
+
