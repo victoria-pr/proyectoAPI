@@ -1,7 +1,4 @@
-/* import {getRecipes, addRecipe, deleteRecipe} from "./favourite"; */
-
-
-//una vez creada la imagen, hay que ponerle un listener [recipeImagen.addEventListener("click",() => menuAddRecipe(recipe))]
+import {getRecipes, addRecipe as favAddRecipes, deleteRecipe} from "./favourite.js";
 
 async function getData(url){
     let recipe = await fetch(url.toString())
@@ -11,8 +8,8 @@ async function getData(url){
       return{
             name: data.recipe.label,
             image: data.recipe.image,
-            url: data.recipe.url, //no lo estoy usando aún
-            ingredients: data.recipe.ingredientLines
+            ingredients: data.recipe.ingredients,
+            urlReceta: data.recipe.url
           };
         })
         console.log(recipe);
@@ -35,26 +32,44 @@ async function oneRecipe(){
     showData(recipe)
 }
 
-   function showData(recipe){
-    let recipeSection = document.getElementById("infoRecipe")
-    let recipename = document.createElement("h3");
-    let recipeimage = document.createElement("img");
-    let recipeUrl = document.createElement("a");
-    let ingredientList = document.createElement("li");
-   
+function showData(recipe){
+  let recipeSection = document.getElementById("infoRecipe")
+  recipeSection.style.display = "none"
+  
+  let recipename = document.createElement("h3");
+  
+  let recipeimage = document.createElement("img");
+  recipeimage.onload = function(){
+    recipeSection.style.display="block";
+}
+  let ingredientList = document.createElement("ul");
+
+  let favouriteButton = document.createElement("button")
+  favouriteButton.innerText = "favourite";
+  favouriteButton.addEventListener("click",() => favAddRecipes(recipe)); 
+
+  let sourceButton = document.createElement("button")
+
+  let recipeURL = document.createElement("a");
+  recipeURL.textContent = "Source";
+  recipeURL.target = "_blank";
+
+  recipename.innerText = recipe.name;
+  recipeimage.src = recipe.image;
+  recipeURL.href = recipe.urlReceta;
 
 
-    recipename.innerText = recipe.name;
-    recipeimage.src = recipe.image;
-    recipeUrl.href = recipe.url;
-    ingredientList.innerText = recipe.ingredients;
+  recipe.ingredients.forEach(ingredient => {
+    let eachIngredient =document.createElement("li");
+    eachIngredient.innerText = ingredient.text;
+    ingredientList.appendChild(eachIngredient);
+  });
     
-    /* recipeimage.addEventListener("click",() => favAddRecipes(recipe)); */
+  recipeSection.appendChild(recipename);
+  recipeSection.appendChild(recipeimage);
+  recipeSection.appendChild(ingredientList);
+  recipeSection.appendChild(favouriteButton);
+  recipeSection.appendChild(recipeURL)
 
-    recipeSection.appendChild(recipename);
-    recipeSection.appendChild(recipeimage);
-    recipeSection.appendChild(recipeUrl);
-    recipeSection.appendChild(ingredientList)
-
-  };
-  oneRecipe();
+};
+oneRecipe();

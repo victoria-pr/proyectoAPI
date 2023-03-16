@@ -1,23 +1,3 @@
-/* let url = createBaseUrl();
-
-url.searchParams.set("mealType", "lunch/dinner")
-url.searchParams.set("mealType", "breakfast")
-
-console.log(url.toString())
-
-console.log(url.searchParams.get("mealType"));
-
-function createBaseUrl(){
-    let url = new URL ("https://api.edamam.com/api/recipes/v2")
-    url.searchParams.set("type", "public")
-    url.searchParams.set("app_id", "8f1116ed")
-    url.searchParams.set("app_key", "b96244302b4b890f50c42ac76c664430")
-    url.searchParams.append("dishType", "sandwiches")
-
-    return url;
-
-} */
-
 const searchButton = document.getElementById("searchButton");
 
 searchButton.addEventListener('click', () => { //ponemos el listener al boton con id="searchButton"
@@ -75,7 +55,7 @@ function searchSandwiches(ingredients) {
 
 
         recetaDiv.appendChild(nombreReceta);
-        recipeUrl.appendChild(imagenReceta); //recipeUrl.appendChild(imagenReceta) -para que sea solo la imagen la q tenga el link
+        recipeUrl.appendChild(imagenReceta); 
         recetaDiv.appendChild(recipeUrl)
         recetaDiv.appendChild(cantidadIngredientes);
         recetaDiv.appendChild(urlSource);
@@ -85,14 +65,3 @@ function searchSandwiches(ingredients) {
     })
     .catch(error => console.error(error));
 }
-
-
-        //MOSTRAR LA LISTA DE INGREDIENTES
-
-                /* let ingredientList = document.createElement("li");
-        ingredientList.innerText = hit.recipe.ingredientLines; */
-
-
-
-        /* recetaDiv.appendChild(ingredientList) */
-
