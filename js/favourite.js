@@ -1,0 +1,38 @@
+export function getRecipes(){
+    let recipes = localStorage.getItem("recipes");
+    if(recipes === null){
+        return[];
+    }
+    return JSON.parse(recipes);
+}
+function saveRecipes(recipes){
+    let recipesJSON = JSON.stringify(recipes);
+    localStorage.setItem("recpes", recipesJSON);
+}
+export function addRecipe(recipe){
+    let recipes = getRecipes();
+    if (inList(recipe, recipes) !== -1){
+        return;
+    } 
+    recipes.push(recipe);
+    saveRecipes(recipes);
+}
+
+function inList(recipe, recipes){
+    let index = recipes.findIndex(element=> element.name === recipe.name);
+    return index;
+}
+
+export function deleteRecipe(recipe){
+    let recipes = getRecipes();
+    let index = inList(recipe,recipes);
+    if(index === -1){
+        return;
+    }
+    recipes.splice(index,1);
+    saveRecipes (recipe);
+}
+
+export function clearMenu(){
+    localStorage.clear();
+}
