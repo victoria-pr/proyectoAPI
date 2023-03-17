@@ -7,7 +7,7 @@ export function getRecipes(){
 }
 function saveRecipes(recipes){
     let recipesJSON = JSON.stringify(recipes);
-    localStorage.setItem("recpes", recipesJSON);
+    localStorage.setItem("recipes", recipesJSON);
 }
 export function addRecipe(recipe){
     let recipes = getRecipes();
@@ -30,7 +30,7 @@ export function deleteRecipe(recipe){
         return;
     }
     recipes.splice(index,1);
-    saveRecipes (recipe);
+    saveRecipes (recipes);
 }
 
 export function clearMenu(){

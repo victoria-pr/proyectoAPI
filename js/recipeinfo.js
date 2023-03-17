@@ -1,4 +1,4 @@
-import {getRecipes, addRecipe as favAddRecipes, deleteRecipe} from "./favourite.js";
+import {addRecipe as favAddRecipes} from "./favourite.js";
 
 async function getData(url){
     let recipe = await fetch(url.toString())
