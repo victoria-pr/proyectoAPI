@@ -40,7 +40,7 @@ function showData(recipe){
   
   let recipeimage = document.createElement("img");
   recipeimage.onload = function(){
-    recipeSection.style.display="block";
+    recipeSection.style.display="flex";
 }
   let ingredientList = document.createElement("ul");
 
@@ -51,7 +51,7 @@ function showData(recipe){
   let sourceButton = document.createElement("button")
 
   let recipeURL = document.createElement("a");
-  recipeURL.textContent = "Source";
+  recipeURL.textContent = "You can find the full recipe here";
   recipeURL.target = "_blank";
 
   recipename.innerText = recipe.name;
@@ -65,11 +65,17 @@ function showData(recipe){
     ingredientList.appendChild(eachIngredient);
   });
     
+  let space1 = document.createElement("br");
+  let space2 = document.createElement("br");
+
+
   recipeSection.appendChild(recipename);
   recipeSection.appendChild(recipeimage);
   recipeSection.appendChild(ingredientList);
   recipeSection.appendChild(favouriteButton);
+  recipeSection.appendChild(space1);
   recipeSection.appendChild(recipeURL)
+  recipeSection.appendChild(space2);
 
 };
 oneRecipe();

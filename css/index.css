@@ -8,25 +8,6 @@
     src: url(../fonts/BowlbyOneSC-Regular.ttf);
 }
 
-#navbar{
-background: black;
-}
-
-
-*{
-    
-}
-
-body{
-    background: #22AA8E
-}
-
-#titulo{
-    font-family: Font Titulos;
-    text-align: center;
-    font-size: 3em;
-}
-
 #buscador{
 margin-bottom: 30px;
 text-align: center;
@@ -43,18 +24,21 @@ button{
     border-radius: 10px;
     background: #F29BAF;
     font-size: 2em  ;
-    
 }
 
-#resultados{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-}
 h3{
     width: 300px;
     font-family: Font h3;
 }
 
+h1 #titulo{
+    text-align: center;
+    margin-left: 20px;
+}
 
-
+p{
+    font-size: 2em;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,25 @@
+#infoRecipe{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    width: 300px;
+}
+
+button{
+    border-radius: 5px;
+    background: #F29BAF;
+    font-size: 1em  ;
+}
+
+h3{
+    width: 390px;
+    font-family: Font h3;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(242, 207, 161);
+}

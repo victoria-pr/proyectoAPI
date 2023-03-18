@@ -24,8 +24,8 @@ function searchSandwiches(ingredients) {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-      const hits = data.hits;
-      const resultadosSection = document.getElementById("resultados");
+      let hits = data.hits;
+      let resultadosSection = document.getElementById("resultados");
       resultadosSection.innerHTML ="";
 
       hits.forEach(hit => {
@@ -44,9 +44,9 @@ function searchSandwiches(ingredients) {
         let cantidadIngredientes = document.createElement("p");
         cantidadIngredientes.innerText = "Ingredients:" +hit.recipe.ingredients.length;
 
-        let urlSource = document.createElement("a");
+        /* let urlSource = document.createElement("a");
         urlSource.href = hit.recipe.url;
-        urlSource.setAttribute("target", "_blank")
+        urlSource.setAttribute("target", "_blank") */
 
 
         let recipeUrl = document.createElement("a");
@@ -58,8 +58,8 @@ function searchSandwiches(ingredients) {
         recipeUrl.appendChild(imagenReceta); 
         recetaDiv.appendChild(recipeUrl)
         recetaDiv.appendChild(cantidadIngredientes);
-        recetaDiv.appendChild(urlSource);
-        urlSource.textContent = "+ info";
+        /* recetaDiv.appendChild(urlSource);
+        urlSource.textContent = "+ info"; */
         resultadosSection.appendChild(recetaDiv);
       });
     })
