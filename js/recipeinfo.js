@@ -30,7 +30,7 @@ async function oneRecipe(){
     let recipeUrl = createBaseUrl(id);
     let recipe = await getData(recipeUrl);
     showData(recipe)
-}
+} 
 
 function showData(recipe){
   let recipeSection = document.getElementById("infoRecipe")
@@ -56,7 +56,6 @@ function showData(recipe){
   recipeimage.src = recipe.image;
   recipeURL.href = recipe.urlReceta;
 
-
   recipe.ingredients.forEach(ingredient => {
     let eachIngredient =document.createElement("li");
     eachIngredient.innerText = ingredient.text;
@@ -65,7 +64,6 @@ function showData(recipe){
     
   let space1 = document.createElement("br");
   let space2 = document.createElement("br");
-
 
   recipeSection.appendChild(recipename);
   recipeSection.appendChild(recipeimage);
