@@ -42,7 +42,7 @@ function searchSandwiches(ingredients) {
         imagenReceta.src = hit.recipe.image;
 
         let cantidadIngredientes = document.createElement("p");
-        cantidadIngredientes.innerText = "Ingredients:" +hit.recipe.ingredients.length;
+        cantidadIngredientes.innerText = "Ingredients: " +hit.recipe.ingredients.length;
 
         /* let urlSource = document.createElement("a");
         urlSource.href = hit.recipe.url;

@@ -45,10 +45,8 @@ function showData(recipe){
   let ingredientList = document.createElement("ul");
 
   let favouriteButton = document.createElement("button")
-  favouriteButton.innerText = "favourite";
+  favouriteButton.innerText = "favorite";
   favouriteButton.addEventListener("click",() => favAddRecipes(recipe)); 
-
-  let sourceButton = document.createElement("button")
 
   let recipeURL = document.createElement("a");
   recipeURL.textContent = "You can find the full recipe here";
@@ -72,10 +70,10 @@ function showData(recipe){
   recipeSection.appendChild(recipename);
   recipeSection.appendChild(recipeimage);
   recipeSection.appendChild(ingredientList);
-  recipeSection.appendChild(favouriteButton);
   recipeSection.appendChild(space1);
-  recipeSection.appendChild(recipeURL)
-  recipeSection.appendChild(space2);
+  recipeSection.appendChild(favouriteButton);
+  recipeSection.appendChild(space2);/* 
+  recipeSection.appendChild(recipeURL) */
 
 };
 oneRecipe();

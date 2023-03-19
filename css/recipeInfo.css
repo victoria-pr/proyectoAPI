@@ -2,7 +2,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url("../img/lluviaSandwich.png");
+    background-size:contain; 
+    padding-top: 20px;
 }
+
 ul{
     width: 300px;
 }

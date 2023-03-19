@@ -36,9 +36,24 @@ h1 #titulo{
     margin-left: 20px;
 }
 
-p{
+#subtittle{
     font-size: 2em;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+#resultados{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+img{
+    text-align: center;
+    width: 100%;
+}
+
+/* p{
+    border: 2px dashed #b8abae;
+} */
