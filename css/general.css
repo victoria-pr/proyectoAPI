@@ -1,0 +1,93 @@
+@font-face {
+    font-family: Font Titulos;
+    src: url(../fonts/Audiowide-Regular.ttf);
+}
+
+@font-face {
+    font-family: Font h3;
+    src: url(../fonts/BowlbyOneSC-Regular.ttf);
+}
+
+@font-face {
+    font-family: Font p;
+    src: url(../fonts/Raleway-VariableFont_wght.ttf);
+}
+
+li, a, p{
+    font-family: Font p;
+}
+
+a:hover{
+    color: #f06a89;
+}
+
+#navbar{
+    background-image:url('../img/raceflag2.png');
+    background-size:contain;
+    padding-bottom: 30px;
+    padding-top: 28px
+}
+
+#enlacesNav{
+    background-color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#enlacesNav a{
+    text-decoration: none;
+    color: #F29BAF;
+    font-size: x-large;
+    font-family: Font h3;
+}
+
+body{
+    background: #22AA8E;
+    margin: 0px;;
+}
+
+#titulo{
+    font-family: Font Titulos;
+    text-align: center;
+    font-size: 3em;
+}
+
+h3 #resultados{
+    width: 300px;
+    font-family: Font h3;
+}
+
+#footer{
+    background-size:contain;
+    margin-top: 40px;
+    background-image:url('../img/raceflag2.png');
+    background-size:contain;
+}
+
+#enlacesFot{
+    background-color: #f29baff1;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+#enlacesFot img{
+    width: 35px;
+    height: 35px;
+}
+
+#policy{
+    background-color: #f48da5;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    text-align: center;
+    border: 1px solid #22AA8E;
+}
+
+img{
+    border-radius: 5px;
+}

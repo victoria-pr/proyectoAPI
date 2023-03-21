@@ -1,0 +1,27 @@
+h3{
+    width: 300px;
+    font-family: Font h3;
+}
+
+ul{
+    width: 260px;
+}
+
+button{
+    border-radius: 5px;
+    background: #F29BAF;
+    font-size: 1em  ;
+    margin-bottom: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(242, 207, 161);
+}
+
+#resulta2{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+} 
+
